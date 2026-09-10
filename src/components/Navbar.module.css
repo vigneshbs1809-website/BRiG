@@ -1,0 +1,199 @@
+.header {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  max-width: 1100px;
+  z-index: 50;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  background: rgba(10, 5, 5, 0.5); /* Deep red-tinted dark glass bubble */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 100px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.headerScrolled {
+  top: 1rem;
+  background: rgba(6, 3, 3, 0.85); /* Slightly darker on scroll */
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(255, 29, 29, 0.05); /* Subtle red glow */
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.35rem;
+  text-transform: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0.15rem 0.65rem;
+  background: #500e0e; /* Dark red logo highlight box */
+  border-radius: 4px;
+  letter-spacing: -0.01em;
+}
+
+.logoDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.navLinkActiveLine {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-cyan);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover .navLinkActiveLine {
+  width: 100%;
+}
+
+.ctaBtn {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.65rem 1.6rem;
+  border-radius: 50px;
+  border: 1px solid rgba(247, 152, 130, 0.25);
+  background: rgba(139, 30, 30, 0.15); /* Maroon glassmorphic */
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(139, 30, 30, 0.1);
+}
+
+.ctaBtn:hover {
+  background: rgba(139, 30, 30, 0.35);
+  border-color: rgba(247, 152, 130, 0.55);
+  box-shadow: 0 0 20px rgba(247, 152, 130, 0.25);
+  color: #ffffff;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.menuBtn:hover {
+  color: var(--accent-cyan);
+}
+
+@media (min-width: 768px) {
+  .menuBtn {
+    display: none;
+  }
+}
+
+/* Mobile Menu Overlay */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  background: #030303;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.mobileNavLink {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  transition: all 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.mobileCtaBtn {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(247, 152, 130, 0.25);
+  background: rgba(139, 30, 30, 0.15);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.mobileCtaBtn:hover {
+  background: rgba(139, 30, 30, 0.35);
+  border-color: rgba(247, 152, 130, 0.55);
+}
